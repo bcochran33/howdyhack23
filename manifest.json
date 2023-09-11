@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Due Date Scraper",
+    "version": "1.0",
+    "description": "A Chrome extension to scrape due dates from web pages.",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab", "scripting"
+    ]
+}

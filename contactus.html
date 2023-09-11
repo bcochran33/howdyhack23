@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Us | Classify</title>
+
+		<link rel="stylesheet" href="styles.css"> <!-- Reference CSS file -->
+
+		<link rel="icon" href="https://images.vexels.com/media/users/3/224234/isolated/preview/ff7c525c1c3e1bef640644542001e1fd-online-school-logo.png"> <!-- Favicon -->
+	</head>
+	<body>
+		<div id="logo"> <!-- Logo -->
+			<a href="index.html">
+			<img src="https://img.freepik.com/premium-vector/people-classify-web-mobile-app-presentations_697410-3767.jpg?w=2000" width="200" height="50">
+			</a>
+		</div>
+		<h4><em>a John, Carlos, Hans, and Braeden project</em></h4><br>&nbsp
+		<a href="index.html">Home</a>&nbsp
+		<a href="aboutus.html">About Us</a>&nbsp
+		<a href="canvas.html">Canvas</a>&nbsp
+		<a href="zybooks.html">zyBooks</a>&nbsp
+		<a href="cengage.html">Cengage</a>&nbsp
+		<a href="contactus.html">Contact Us</a>
+		<br><br>
+
+		<h2><u>Contact Us</u></h2>
+		<form action="" id="myform">
+			<h3>Fill out the form below to get in touch with the Classify team!</h3>
+
+			<p>First name</p>
+			<input type="text" id="firstname" placeholder="--">
+
+			<p>Last name</p>
+			<input type="text" id="lastname" placeholder="--">
+
+			<p>Email</p>
+			<input type="text" id="email" placeholder="--">
+
+			<p>Category</p>
+			<label for="category">
+				<input type="radio" name="category" value="General Inquiries">General Inquiries
+			</label>
+			<label for="category">
+				<input type="radio" name="category" value="Troubleshooting">Troubleshooting
+			</label>
+			<label for="category">
+				<input type="radio" name="category" value="Suggestions">Suggestions
+			</label>
+			<label for="category">
+				<input type="radio" name="category" value="Other">Other
+			</label>
+
+			<p>Subject</p>
+			<input type="text" id="subject" placeholder="--">
+
+			<p>Message</p>
+			<input type="textarea" id="message" size="100" placeholder="Type your message here...">
+
+			<br><br><button type="submit" onclick="getRadio()">Submit</button>
+		</form><br>
+		<form action="" id="mlform">
+			<h3>Mailing List</h3>
+			<p>Want to recieve news and updates about what's new with Classify? Enter your email address below to subscribe to our mailing list! Unsubscribe at any time.</p>
+			<input type="text" id="mailemail" placeholder="Email address...">
+			<button type="submit">Subscribe</button>
+		</form>
+		<br><h3>Other Methods</h3>
+		<p>Send us an email anytime at <a href="mailto:theclassifyteam@gmail.com">theclassifyteam@gmail.com</a></p>
+		<script>
+			let mydata = document.getElementById("myform");
+
+			function getRadio() {
+				var ele = document.getElementsByName("category");
+            			for (i = 0; i < ele.length; i++) {
+                			if (ele[i].checked)
+                        		return ele[i].value;
+            			}
+			}
+
+			myform.addEventListener("submit", (e) => {
+  				e.preventDefault();
+
+				let firstname = document.getElementById("firstname");
+				let lastname = document.getElementById("lastname");
+				let email = document.getElementById("email");
+				let subject = document.getElementById("subject");
+				let message = document.getElementById("message");
+
+				console.log("First name: " + firstname.value);
+				console.log("Last name: " + lastname.value);
+				console.log("Email: " + email.value);
+				console.log("Category: " + getRadio());
+				console.log("Subject: " + subject.value);
+				console.log("Message: " + message.value);
+
+				firstname.value = "";
+				lastname.value = "";
+				email.value = "";
+				subject.value = "";
+				message.value = "";
+			});
+
+			mlform.addEventListener("submit", (e) => {
+  				e.preventDefault();
+
+				let mailemail = document.getElementById("mailemail");
+				console.log("Mailing list email: " + mailemail.value);
+				mailemail.value = "";
+			});
+		</script>
+	</body>
+</html>
